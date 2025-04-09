@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Mart Sales Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .spacer {
+            height: 40px;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            margin: auto;
+        }
+
+        /* Header */
+        h2 {
+            color: #ff69b4;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Form Elements */
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            color: #fff;
+            display: block;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: #333;
+            border: 2px solid #ff69b4;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border-color: #00ff00;
+            outline: none;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #00ff00;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 20px;
+            color: #000;
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            input, button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="spacer"></div> <!-- Top spacing -->
+
+    <div class="container">
+        <h2>Enter Product & Outlet Details</h2>
+        <form method="POST" action="/predict">
+            <label for="item_mrp">Item MRP</label>
+            <input type="number" step="0.01" name="item_mrp" value="141.618" required>
+
+            <label for="outlet_id">Outlet Identifier</label>
+            <input type="number" step="1" name="outlet_id" value="9" required>
+
+            <label for="outlet_size">Outlet Size</label>
+            <input type="number" step="1" name="outlet_size" value="1" required>
+
+            <label for="outlet_type">Outlet Type</label>
+            <input type="number" step="1" name="outlet_type" value="1" required>
+
+            <label for="outlet_age">Outlet Age</label>
+            <input type="number" step="1" name="outlet_age" value="24" required>
+
+            <label for="start_date">Start Date</label>
+            <input type="date" name="start_date" required>
+
+            <label for="end_date">End Date</label>
+            <input type="date" name="end_date" required>
+
+            <button type="submit">Predict Sales</button>
+        </form>
+    </div>
+
+    <div class="spacer"></div> <!-- Bottom spacing -->
+
+    <footer>
+        Made By: Vaibhavi Lakhani
+    </footer>
+
+</body>
+</html>
