@@ -110,8 +110,8 @@
             <thead class="table-dark">
                 <tr>
                     <th>Date</th>
-                    <th>Predicted Sales (₹)</th>
-                    <th>Prediction Range (₹)</th>
+                    <th>Predicted Sales ($)</th>
+                    <th>Prediction Range ($)</th>
                 </tr>
             </thead>
             <tbody>
@@ -128,7 +128,7 @@
 
     <!-- Total -->
     <div class="total-sales">
-        <h4>📦 Total Sales: ₹{{ total }}</h4>
+        <h4>📦 Total Sales: ${{ total }}</h4>
     </div>
 
     <!-- Back Button -->
@@ -146,7 +146,7 @@
         data: {
             labels: chartLabels,
             datasets: [{
-                label: 'Predicted Sales (₹)',
+                label: 'Predicted Sales ($)',
                 data: chartData,
                 fill: false,
                 borderColor: '#ff69b4',
@@ -161,7 +161,7 @@
                 y: {
                     title: {
                         display: true,
-                        text: 'Sales (₹)'
+                        text: 'Sales ($)'
                     }
                 },
                 x: {
